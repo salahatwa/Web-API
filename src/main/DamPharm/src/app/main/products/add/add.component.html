@@ -7,11 +7,7 @@
     <div class="uk-grid-small" uk-grid>
      
      
-      <div class="uk-padding-small">
-        <label for="descEN" class="uk-form-label">Description</label>
-        <input type="text" name="descEN" class="uk-input" placeholder="Description" [required]="true"
-          [(ngModel)]="currency.currencyDesc" #descEN="ngModel">
-      </div>
+      
 
       <div class="uk-padding-small">
         <label for="descAr" class="uk-form-label">Arabic Description</label>
@@ -42,10 +38,7 @@
         <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
     </div>
 
-    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
-        <label><input class="uk-radio" type="radio" name="radio2" checked> A</label>
-        <label><input class="uk-radio" type="radio" name="radio2"> B</label>
-    </div>
+    
 
     <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
         <label><input class="uk-checkbox" type="checkbox" checked> A</label>
@@ -102,23 +95,48 @@
 </div>
 
         <div class="uk-width-1-1">
-            <input class="uk-input" type="text" placeholder="100">
+          <input type="text" name="descEN" class="uk-input" placeholder="Currency ID" [required]="true"
+          [(ngModel)]="currency.currencyId" #descEN="ngModel">
+        </div>
+        
+        <div class="uk-width-1-2@s">
+            <input type="text" name="descEN" class="uk-input" placeholder="Description" [required]="true"
+          [(ngModel)]="currency.currencyDesc" #descEN="ngModel">
         </div>
         <div class="uk-width-1-2@s">
-            <input class="uk-input" type="text" placeholder="50">
+            <input type="text" name="descAr" class="uk-input" placeholder="Arabic Description" [required]="true" [(ngModel)]="currency.currencyDescAr"
+          #descAr="ngModel">
         </div>
+        
+        <div class="uk-width-1-2@s">
+            <input type="text" name="symbol" class="uk-input" placeholder="Currency Symbol" [required]="true" [(ngModel)]="currency.currencySymbol"
+          #symbol="ngModel">
+        </div>
+        
         <div class="uk-width-1-4@s">
-            <input class="uk-input" type="text" placeholder="25">
+         <select class="uk-select" [(ngModel)]="currency.negSymbole">
+           <option selected disabled>Negative sign</option>
+            <option [ngValue]="1">()</option>
+            <option [ngValue]="2">-</option>
+            <option [ngValue]="3">CR</option>
+          </select>
         </div>
+        
         <div class="uk-width-1-4@s">
-            <input class="uk-input" type="text" placeholder="25">
+        <!--    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+           
+           </div> -->
+           
+            <div class="uk-margin">
+             <div class="uk-form-label">Display Symbol</div>
+              <div class="uk-form-controls">
+                  <label><input class="uk-radio" type="radio" name="radio2" [value]="1" [(ngModel)]="currency.negSymboleSign">Before Amount</label>
+                  <label><input class="uk-radio" type="radio" name="radio2" [value]="2"  [(ngModel)]="currency.negSymboleSign">After Amount</label>
+                  <label><input class="uk-checkbox" type="checkbox" [checked]="currency.incSpace"  (change)="currency.incSpace = !currency.incSpace">Include Space</label>
+              </div>
+            </div>
         </div>
-        <div class="uk-width-1-2@s">
-            <input class="uk-input" type="text" placeholder="50">
-        </div>
-        <div class="uk-width-1-2@s">
-            <input class="uk-input" type="text" placeholder="50">
-        </div>
+        
    
 <!--      
       <div class="uk-padding-small">
