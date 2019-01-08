@@ -3,6 +3,7 @@ package org.currency.starter.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Index;
 import javax.persistence.Table;
@@ -14,19 +15,18 @@ import org.hibernate.annotations.GenericGenerator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-@Table(name="MC40200",indexes = { @Index(name = "DEX_ROW_ID", columnList = "CURNCYID") })
+@Table(name="MC40200",indexes = { @Index(name = "DEX_ROW_ID", columnList = "CURRNIDX") })
 public class MC40200 {
 
+
 	@Id
-	@Column(name = "CURNCYID" )
-//	@Size(max = 15)
-	@GeneratedValue(generator = "uuid")
-	@GenericGenerator(name = "uuid", strategy = "uuid")
-	private String id;
-
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "CURRNIDX")
-	private int currencyIndex;
+	private Integer currencyIndex;
 
+	@Column(name = "CURNCYID" , length = 15)
+	private String currencyId;
+	
 	@Column(name = "CRNCYDSC", length = 31)
 	private String currencyDesc;
 
@@ -89,19 +89,19 @@ public class MC40200 {
 		
 	}
 
-	public String getId() {
+	public String getCurrencyId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setCurrencyId(String id) {
 		this.id = id;
 	}
 
-	public int getCurrencyIndex() {
+	public Integer getCurrencyIndex() {
 		return currencyIndex;
 	}
 
-	public void setCurrencyIndex(int currencyIndex) {
+	public void setCurrencyIndex(Integer currencyIndex) {
 		this.currencyIndex = currencyIndex;
 	}
 
