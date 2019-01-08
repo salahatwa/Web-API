@@ -10,8 +10,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.hibernate.annotations.GenericGenerator;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
@@ -90,11 +88,11 @@ public class MC40200 {
 	}
 
 	public String getCurrencyId() {
-		return id;
+		return currencyId;
 	}
 
-	public void setCurrencyId(String id) {
-		this.id = id;
+	public void setCurrencyId(String currencyId) {
+		this.currencyId = currencyId;
 	}
 
 	public Integer getCurrencyIndex() {
