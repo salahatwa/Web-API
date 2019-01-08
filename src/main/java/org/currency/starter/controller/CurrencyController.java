@@ -46,12 +46,13 @@ public class CurrencyController {
 			postParam = new CurrencyParam();
 		}
 
-		return currencyService.findDataByCondition("Date", "ASC", postParam.getPage(), 5);
+		return currencyService.findDataByCondition("Date", "DESC", postParam.getPage(), 5);
 	}
 
 	@ApiOperation(value = "Add new Currency")
 	@PostMapping("/currencies")
 	public MC40200 addCurrency(@ApiParam(required = true) @RequestBody MC40200 currency) {
+		LOG.info(" Adding Currency .. ");
 		
 		return currencyService.save(currency);
 	}
