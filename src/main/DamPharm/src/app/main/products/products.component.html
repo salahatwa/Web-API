@@ -1,0 +1,35 @@
+<app-dam-pharm-navbar></app-dam-pharm-navbar>
+<app-dam-pharm-sidebar></app-dam-pharm-sidebar>
+<div class="content-padder content-background">
+  <div class="uk-section-small">
+    <div class="uk-container uk-container-large">
+      <app-dam-pharm-products-add (update)="onUpdate($event)"></app-dam-pharm-products-add>
+      <div class="uk-card uk-card-default uk-card-body" products-table>
+        <table class="uk-table uk-table-justify uk-table-divider">
+          <thead>
+            <tr>
+              <th>Currency ID</th>
+              <th>Description</th>
+              <th>Arabic Description</th>
+              <th>Currency Symbol</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="results && !results.length">
+              <th colspan="6" class="uk-text-center">{{ 'table.no-data' | translate }}</th>
+            </tr>
+            <tr *ngFor="let currency of results  | paginate: { id: 'server', itemsPerPage: 5, currentPage: page , totalItems: totalElements  } ; let i = index">
+              <td>{{currency.id}}</td>
+              <td>{{currency.currencyDesc}}</td>
+              <td>{{currency.currencyDescAr}}</td>
+              <td>{{currency.currencySymbol}}</td>
+            </tr>
+          </tbody>
+
+          <pagination-controls [responsive]="responsive" (pageChange)="onPageChange($event)" id="server"></pagination-controls> 
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

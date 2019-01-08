@@ -1,0 +1,153 @@
+<button class="uk-button uk-button-primary uk-margin-small" type="button" uk-toggle="target: #form-currency-add; animation: uk-animation-slide-top, uk-animation-fade">
+  <span uk-icon="icon: plus;ratio:1.25;"></span>
+</button>
+<div id="form-currency-add" class="uk-card uk-card-default uk-card-body uk-margin-small uk-margin-remove-top" hidden>
+  <h2 class="uk-card-title">Add Currency</h2>
+  <form (ngSubmit)="onSubmit();currencyForm.reset();" #currencyForm="ngForm">
+    <div class="uk-grid-small" uk-grid>
+     
+     
+      <div class="uk-padding-small">
+        <label for="descEN" class="uk-form-label">Description</label>
+        <input type="text" name="descEN" class="uk-input" placeholder="Description" [required]="true"
+          [(ngModel)]="currency.currencyDesc" #descEN="ngModel">
+      </div>
+
+      <div class="uk-padding-small">
+        <label for="descAr" class="uk-form-label">Arabic Description</label>
+        <input type="text" name="descAr" class="uk-input" placeholder="Arabic Description" [required]="true" [(ngModel)]="currency.currencyDescAr"
+          #descAr="ngModel">
+      </div>
+
+
+      <div class="uk-padding-small">
+        <label for="symbol" class="uk-form-label">Currency Symbol</label>
+        <input type="text" name="symbol" class="uk-input" placeholder="Currency Symbol" [required]="true" [(ngModel)]="currency.currencySymbol"
+          #symbol="ngModel">
+      </div>
+
+
+      <div class="uk-margin">
+        <input class="uk-input" type="text" placeholder="Input">
+    </div>
+
+    <div class="uk-margin">
+        <select class="uk-select">
+            <option>Option 01</option>
+            <option>Option 02</option>
+        </select>
+    </div>
+
+    <div class="uk-margin">
+        <textarea class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
+    </div>
+
+    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+        <label><input class="uk-radio" type="radio" name="radio2" checked> A</label>
+        <label><input class="uk-radio" type="radio" name="radio2"> B</label>
+    </div>
+
+    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+        <label><input class="uk-checkbox" type="checkbox" checked> A</label>
+        <label><input class="uk-checkbox" type="checkbox"> B</label>
+    </div>
+
+    <div class="uk-margin">
+        <input class="uk-range" type="range" value="2" min="0" max="10" step="0.1">
+    </div>
+
+
+    <div class="uk-child-width-1-2@s uk-text-center" uk-grid>
+      <div>
+          <div class="uk-box-shadow-small uk-padding">Small</div>
+      </div>
+  
+      <div>
+          <div class="uk-box-shadow-medium uk-padding">Medium</div>
+      </div>
+  
+      <div>
+          <div class="uk-box-shadow-large uk-padding">Large</div>
+      </div>
+  
+      <div>
+          <div class="uk-box-shadow-xlarge uk-padding">XLarge</div>
+      </div>
+  </div>
+
+  <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+    <h3 class="uk-card-title">Default</h3>
+    <p>Lorem ipsum <a href="#">dolor</a> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+
+<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+  <div>
+      <div class="uk-card uk-card-default uk-card-body">
+          <h3 class="uk-card-title">Default</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+  </div>
+  <div>
+      <div class="uk-card uk-card-primary uk-card-body">
+          <h3 class="uk-card-title">Primary</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+  </div>
+  <div>
+      <div class="uk-card uk-card-secondary uk-card-body">
+          <h3 class="uk-card-title">Secondary</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+      </div>
+  </div>
+</div>
+
+        <div class="uk-width-1-1">
+            <input class="uk-input" type="text" placeholder="100">
+        </div>
+        <div class="uk-width-1-2@s">
+            <input class="uk-input" type="text" placeholder="50">
+        </div>
+        <div class="uk-width-1-4@s">
+            <input class="uk-input" type="text" placeholder="25">
+        </div>
+        <div class="uk-width-1-4@s">
+            <input class="uk-input" type="text" placeholder="25">
+        </div>
+        <div class="uk-width-1-2@s">
+            <input class="uk-input" type="text" placeholder="50">
+        </div>
+        <div class="uk-width-1-2@s">
+            <input class="uk-input" type="text" placeholder="50">
+        </div>
+   
+<!--      
+      <div class="uk-padding-small">
+        <label for="stock" class="uk-form-label">{{ 'form.label.stock' | translate }}</label>
+        <input type="number" name="stock" class="uk-input" placeholder="{{ 'form.placeholder.stock' | translate }}" [required]="true"
+          [(ngModel)]="product.stock" #stock="ngModel">
+      </div>
+      <div class="uk-padding-small">
+        <label for="cost" class="uk-form-label">{{ 'form.label.cost' | translate }}</label>
+        <input type="text" name="cost" class="uk-input" placeholder="{{ 'form.placeholder.cost' | translate }}" [required]="true"
+          [(ngModel)]="product.cost" #cost="ngModel" (keyup)="onKeyup($event)">
+      </div>
+      <div class="uk-padding-small">
+        <label for="selling_price" class="uk-form-label">{{ 'form.label.selling-price' | translate }}</label>
+        <input type="text" name="selling_price" class="uk-input" placeholder="{{ 'form.placeholder.selling-price' | translate }}"
+          [required]="true" [(ngModel)]="product.selling_price" #selling_price="ngModel" (keyup)="onKeyup($event)">
+      </div>
+      <div class="uk-width-1-1 uk-padding-small">
+        <label for="Description" class="uk-form-label">{{ 'form.label.description' | translate }}</label>
+        <textarea name="description" class="uk-textarea" rows="5" placeholder="{{ 'form.placeholder.description' | translate }}"
+          [(ngModel)]="product.description" #description="ngModel"></textarea>
+      </div> -->
+      <div class="uk-width-1-1 uk-padding-small">
+        <button type="submit" class="uk-button uk-button-primary" [disabled]="!currencyForm.form.valid">{{ 'form.button.save' | translate }}</button>
+        <button type="button" class="uk-button uk-button-default" uk-toggle="target: #form-currency-add; animation: uk-animation-fade"
+          (click)="initProduct()">
+          {{ 'form.button.cancel' | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
