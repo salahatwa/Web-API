@@ -135,7 +135,40 @@
                   <label><input class="uk-checkbox" type="checkbox" [checked]="currency.incSpace"  (change)="currency.incSpace = !currency.incSpace">Include Space</label>
               </div>
             </div>
+            
         </div>
+        
+        
+     
+    <div class="uk-width-1-2@s">
+        <input type="text" name="currencyUnit" class="uk-input" placeholder="Currency Unit" [required]="true" [(ngModel)]="currency.currencyUnit"
+          #currencyUnit="ngModel">
+    </div>
+    <div class="uk-width-1-2@s">
+         <input type="text" name="currencyUnitAr" class="uk-input" placeholder="Currency Unit Arabic" [required]="true" [(ngModel)]="currency.currencyUnitAr"
+          #currencyUnitAr="ngModel">
+    </div>
+    
+    
+    <div class="uk-width-1-2@s">
+        <input type="text" name="unitSubUnitConnector" class="uk-input" placeholder="Subunit Connector" [required]="true" [(ngModel)]="currency.unitSubUnitConnector"
+          #unitSubUnitConnector="ngModel">
+    </div>
+    <div class="uk-width-1-2@s">
+         <input type="text" name="currencyUnitAr" class="uk-input" placeholder="Subunit Connector Arabic" [required]="true" [(ngModel)]="currency.unitSubUnitConnectorAr"
+          #unitSubUnitConnectorAr="ngModel">
+    </div>
+    
+    
+    
+     <div class="uk-width-1-2@s">
+        <input type="text" name="currencySubUnit" class="uk-input" placeholder="Currency Subunit" [required]="true" [(ngModel)]="currency.currencySubUnit"
+          #currencySubUnit="ngModel">
+    </div>
+    <div class="uk-width-1-2@s">
+         <input type="text" name="currencySubUnitAr" class="uk-input" placeholder="Currency Subunit Arabic" [required]="true" [(ngModel)]="currency.currencySubUnitAr"
+          #currencySubUnitAr="ngModel">
+    </div>
         
    
 <!--      
