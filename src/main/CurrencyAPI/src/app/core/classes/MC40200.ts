@@ -1,6 +1,6 @@
 
 export class MC40200 {
-    id: string;
+    currencyId: string;
     currencyDesc: string;
     currencyDescAr: string;
     currencyIndex: number;

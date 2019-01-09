@@ -3,7 +3,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { TranslateService } from '@ngx-translate/core';
 import { isArray } from 'lodash';
 import { ProductsService } from '../../core/services/products.service';
-import { Product } from '../../core/classes/product';
 import { UtilsService } from '../../shared/services/utils.service';
 import { CurrencyParam } from '../../core/classes/ParamInterfaces';
 import { GenericPagination } from '../../core/classes/generic-pagination';
@@ -16,7 +15,7 @@ import { MC40200 } from '../../core/classes/MC40200';
 })
 export class ProductsComponent extends GenericPagination<MC40200> implements OnInit, OnDestroy {
   private _sub: Subscription = undefined;
-  // products: MC40200[];
+  
 
   constructor(
     private _productService: ProductsService,
@@ -27,7 +26,7 @@ export class ProductsComponent extends GenericPagination<MC40200> implements OnI
   }
 
   ngOnInit() {
-    this.loadProducts();
+    this.loadCurrencies();
   }
 
   ngOnDestroy() {
@@ -35,7 +34,7 @@ export class ProductsComponent extends GenericPagination<MC40200> implements OnI
   }
 
 
-  loadProducts() {
+  loadCurrencies() {
     const param = new CurrencyParam();
     param.page = this.page;
     this.setPageParam(param);
@@ -44,8 +43,8 @@ export class ProductsComponent extends GenericPagination<MC40200> implements OnI
 
 
 
-  onUpdate(product: Product) {
-    // this.products.push(product);
+  onUpdate(currency: MC40200) {
+    this.results.push(currency);
   }
 
 }

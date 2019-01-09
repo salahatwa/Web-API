@@ -19,14 +19,15 @@
               <th colspan="6" class="uk-text-center">{{ 'table.no-data' | translate }}</th>
             </tr>
             <tr *ngFor="let currency of results  | paginate: { id: 'server', itemsPerPage: 5, currentPage: page , totalItems: totalElements  } ; let i = index">
-              <td>{{currency.id}}</td>
+              <td>{{currency.currencyId}}</td>
               <td>{{currency.currencyDesc}}</td>
               <td>{{currency.currencyDescAr}}</td>
               <td>{{currency.currencySymbol}}</td>
             </tr>
           </tbody>
 
-          <pagination-controls [responsive]="responsive" (pageChange)="onPageChange($event)" id="server"></pagination-controls> 
+          <!-- [responsive]="responsive" -->
+          <pagination-controls  (pageChange)="onPageChange($event)" id="server"></pagination-controls> 
 
         </table>
       </div>

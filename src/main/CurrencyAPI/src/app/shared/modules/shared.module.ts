@@ -8,6 +8,7 @@ import { UtilsService } from '../services/utils.service';
 import { NavbarComponent } from '../components/navbar.component';
 import { SidebarComponent } from '../components/sidebar.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { PageLoaderComponent } from '../../core/page-loader/page-loader.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ],
   declarations: [
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    PageLoaderComponent
   ],
   providers: [UtilsService],
   exports: [
@@ -31,7 +33,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SidebarComponent,
     NguiAutoCompleteModule,
     TranslateModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    PageLoaderComponent
   ]
 })
 export class SharedModule { }

@@ -3,9 +3,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs/Subscription';
 import { isArray } from 'lodash';
 import { ProductsService } from '../../../core/services/products.service';
-import { ProductTypesService } from '../../../core/services/product-types.service';
-import { Product } from '../../../core/classes/product';
-import { ProductType } from '../../../core/classes/product-type';
 import { UtilsService } from '../../../shared/services/utils.service';
 import { MC40200 } from '../../../core/classes/MC40200';
 
@@ -22,10 +19,8 @@ export class AddComponent implements OnInit, OnDestroy {
   @Output('update')
   update: EventEmitter<MC40200> = new EventEmitter<MC40200>();
 
-  // product: Product;
   currency:MC40200;
   
-  productTypes: ProductType[];
 
   constructor(
     private _productsService: ProductsService,
@@ -56,11 +51,6 @@ export class AddComponent implements OnInit, OnDestroy {
   }
 
   initProduct() {
-    // this._utils.unsubscribeSub(this._typeSub);
-    // this._typeSub = this._productTypesService.get().subscribe(
-    //   data => isArray(data) ? this.productTypes = data : data,
-    //   err => { console.log(err); }
-    // );
     this.currency = new MC40200();
   }
 

@@ -74,7 +74,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/unauth/**").permitAll()
                 .antMatchers(apiPath+"/**").authenticated()
                 .antMatchers(unauthApiPath+"**").permitAll()
-                .anyRequest().authenticated().and()
+//                .anyRequest().authenticated()
+                .and()
                 .addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class) // Custom JWT based security filter
                 .headers().cacheControl(); // disable page caching
         
